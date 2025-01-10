@@ -35,7 +35,7 @@
     &.subtle { transform: translateY(-10%); }
 
     &.fast { animation-duration: 0.8s; }
-    a.faster { animation-duration: 0.5s; }
+    &.faster { animation-duration: 0.5s; }
   }
 
   &.shaky {

@@ -1,19 +1,19 @@
-interface Fx { layers: number, cpc?: number, delayOffset?: number }
+interface Fx { layers: number, charsPerCycle?: number, delayOffset?: number }
 interface FxWithVariations extends Fx { variations?: Record<string, Fx> }
 
 const TEXT_EFFECTS: Record<string, FxWithVariations> = {
-  bouncy: { layers: 1, cpc: 5 },
+  bouncy: { layers: 1, charsPerCycle: 5 },
   sway: {
     layers: 2,
-    cpc: 5,
+    charsPerCycle: 5,
     delayOffset: 0.25,
     variations: {
-      fast: { layers: 2, cpc: 3.5, delayOffset: 0.2 },
-      faster: { layers: 2, cpc: 2.5, delayOffset: 0.15 }
+      fast: { layers: 2, charsPerCycle: 3.5, delayOffset: 0.2 },
+      faster: { layers: 2, charsPerCycle: 2.5, delayOffset: 0.15 }
     }
   },
-  wavy: { layers: 1, cpc: 5 },
-  shaky: { layers: 1, cpc: 10 }
+  wavy: { layers: 1, charsPerCycle: 5 },
+  shaky: { layers: 1, charsPerCycle: 10 }
 }
 
 const createFxSpan = (fx: Fx, char: string, delay: number, cls: string, layer: number): HTMLSpanElement => {
@@ -47,7 +47,9 @@ export const addTextFX = () => {
   for (const el of document.querySelectorAll('.fx')) {
     // Get text effect from the span's class, if it exists. Skip otherwise
     const classes = [...el.classList.values()];
-    const fxName = classes.find(cls => effectNames.includes(cls)) ?? '';
+    const fxName = classes.find(cls => effectNames.includes(cls));
+    if (!fxName) continue;
+
     let fx = TEXT_EFFECTS[fxName];
     if (!fx) continue;
 
@@ -64,8 +66,7 @@ export const addTextFX = () => {
 
     const { animationDuration } = getComputedStyle(el);
     const text = el.textContent ?? '';
-    const interval = parseFloat(animationDuration) / (fx.cpc ?? 5);
-    const together = el.classList.contains('together');
+    const interval = parseFloat(animationDuration) / (fx.charsPerCycle ?? 5);
 
     // Split the span into words, each to be processed
     let overallIndex = 0;
@@ -73,7 +74,7 @@ export const addTextFX = () => {
     const wordSpans = text.split(' ').map((word) => {
       let span = document.createElement('span');
 
-      if (together) {
+      if (el.classList.contains('together')) {
         // Use the effect per word and sync them in timing
         span = createFxSpan(fx, word, 0, el.className, 1);
       } else {
@@ -94,10 +95,10 @@ export const addTextFX = () => {
     spaceSpan.textContent = ' ';
 
     // Replace span with the generated text and its effects
+    // Join them with a single-spaced span
     el.textContent = '';
-    // el.className = '';
     el.removeAttribute('class');
-    const spans = wordSpans.flatMap((s, i, arr) => i < arr.length - 1 ? [s, spaceSpan.cloneNode(true)] : s);
+    const spans = wordSpans.flatMap((s, i, arr) => (i < arr.length - 1 ? [s, spaceSpan.cloneNode(true)] : s));
     el.append(...spans);
   }
 };

@@ -60,7 +60,7 @@ header {
       color: var(--color-fg);
       font-size: 4em;
       text-align: center;
-      text-shadow: 2px 2px 6px var(--color-accent), -2px -2px 4px var(--color-accent2);
+      text-shadow: 2px 2px 6px var(--color-accent), -2px -2px 8px var(--color-accent2);
     }
   }
 }
@@ -83,7 +83,7 @@ main {
   padding: var(--main-padding);
   border: 4px outset var(--color-accent);
   border-radius: var(--main-padding);
-  box-shadow: 4px 4px 20px black;
+  box-shadow: 4px 4px 20px var(--color-post-bg);
 }
 
 footer {

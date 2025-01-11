@@ -277,7 +277,7 @@ img.banner {
   &.right { object-position: right; }
 }
 
-ul.gallery {
+.gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
@@ -286,9 +286,10 @@ ul.gallery {
 
   img { margin: 0; }
   figcaption { margin: 0.5rem 0 0; }
-  li { flex: 1 0 30%; }
-  &.pair li { flex-basis: 48%; }
-  &.quartet li { flex-basis: 23%; }
+
+  > * { flex: 1 0 30%; }
+  &.pair > * { flex-basis: 48%; }
+  &.quartet > * { flex-basis: 23%; }
 }
 
 blockquote.centerpiece {
@@ -348,10 +349,10 @@ blockquote.centerpiece {
 
 @media only screen and (max-width: 555px) {
   body { font-size: 15px; }
-  ul.gallery {
+  .gallery {
     flex-direction: column;
-    gap: unset;
-    li { flex: unset; }
+    gap: 0.5em;
+    > * { flex: unset; }
   }
 }
 

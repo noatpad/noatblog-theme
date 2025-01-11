@@ -89,7 +89,9 @@ main {
 
 footer {
   text-align: center;
-  margin: 3em 0 0.5em;
+  margin: 3em 0 1em;
+
+  > span:not(#footer-directive) { display: none; }
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-header); font-weight: normal; }

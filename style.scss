@@ -254,11 +254,14 @@ button.upvote-button {
   border-radius: 6px;
   background: transparent;
   color: var(--color-quote);
+  &::after { content: ':o'; }
 
   * { color: inherit; }
+  .upvote-count { display: none; }
   &[disabled] {
     border-color: var(--color-link);
     color: var(--color-link) !important;
+    &::after { content: ':)' }
   }
 }
 

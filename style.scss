@@ -184,9 +184,7 @@ figcaption {
   color: var(--color-faint);
 }
 
-button { cursor: pointer; }
-
-input, textarea {
+input, button, textarea {
   background: var(--color-bg1-bottom);
   color: var(--color-fg);
   padding: 0.25em 0.5em;
@@ -199,6 +197,8 @@ input, textarea {
     border-color: var(--color-accent);
   }
 }
+
+input[type="submit"], button { cursor: pointer; }
 
 // BEAR ELEMENTS
 .home, .page, .post {
@@ -304,7 +304,6 @@ blockquote.centerpiece {
   input[type=submit] {
     display: block;
     margin: 0 auto;
-    cursor: pointer;
   }
 
   #guestbooks___guestbook-form-container { margin: 2em 0; }
@@ -354,4 +353,5 @@ blockquote.centerpiece {
   display: flex;
   justify-content: center;
   margin-bottom: 2em;
+  gap: 0.5em;
 }

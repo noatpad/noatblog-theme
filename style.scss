@@ -15,6 +15,7 @@
   --color-body-bg-top: #18082c;
   --color-body-bg-bottom: #0d4344;
   --color-post-bg: #221822;
+  --color-input-bg: #1f141f;
   --color-fg: #eee;
   --color-faint: #b7aab9;
   --color-quote: #f7c6f5;
@@ -192,17 +193,16 @@ figcaption {
 }
 
 input, button, textarea {
-  background: var(--color-post-bg);
+  background: var(--color-input-bg);
   color: var(--color-fg);
   padding: 0.25em 0.5em;
-  border: 3px solid var(--color-accent2);
+  border: 3px solid var(--color-accent3);
   border-radius: 0.5em;
   outline: none;
   transition: border-color 0.2s ease;
 
-  &:focus {
-    border-color: var(--color-accent);
-  }
+  &:hover { border-color: var(--color-accent2); }
+  &:focus { border-color: var(--color-accent); }
 }
 
 input[type="submit"], button { cursor: pointer; }

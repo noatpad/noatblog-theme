@@ -7,14 +7,14 @@
 
 // VARS
 :root {
-  --content-width: 760px;
-  --main-padding: 3em;
+  --width: 850px;
+  --main-padding: 2em;
   --font-header: Chewy, Lato, Raleway, sans-serif;
   --font-text: Quicksand, Nunito, Avenir Next, Avenir, Arial, system-ui, sans-serif;
   --font-mono: Iosevka Curly, Iosevka, Consolas, monospace;
-  --color-bg1-top: #0e090e;
-  --color-bg1-bottom: #2a1c2c;
-  --color-bg2: #221922;
+  --color-body-bg-top: #18082c;
+  --color-body-bg-bottom: #0d4344;
+  --color-post-bg: #221822;
   --color-fg: #eee;
   --color-faint: #b7aab9;
   --color-quote: #e1c5e0;
@@ -33,10 +33,11 @@ p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote, math { overflow-wrap: break-word;
 
 // COMMON ELEMENTS
 body {
-  max-width: calc(var(--content-width) + var(--main-padding) * 2 + 2em);
+  max-width: calc(var(--width) + var(--main-padding) * 2 + 2em);
+  max-width: var(--width);
   padding: 1em;
   margin: 0 auto;
-  background: linear-gradient(to bottom, var(--color-bg1-top) 15%, var(--color-bg1-bottom));
+  background: linear-gradient(to bottom, var(--color-body-bg-top) 15%, var(--color-body-bg-bottom));
   background-attachment: fixed;
   color: var(--color-fg);
   font-family: var(--font-text);
@@ -78,10 +79,10 @@ nav {
 }
 
 main {
-  background: var(--color-bg2);
+  background: var(--color-post-bg);
   padding: var(--main-padding);
   border: 4px outset var(--color-accent);
-  border-radius: 3em;
+  border-radius: var(--main-padding);
   box-shadow: 4px 4px 20px black;
 }
 
@@ -185,7 +186,7 @@ figcaption {
 }
 
 input, button, textarea {
-  background: var(--color-bg1-bottom);
+  background: var(--color-post-bg);
   color: var(--color-fg);
   padding: 0.25em 0.5em;
   border: 3px solid var(--color-accent2);

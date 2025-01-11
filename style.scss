@@ -35,7 +35,6 @@ p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote, math { overflow-wrap: break-word;
 
 // COMMON ELEMENTS
 body {
-  max-width: calc(var(--width) + var(--main-padding) * 2 + 2em);
   max-width: var(--width);
   padding: 1em;
   margin: 0 auto;
@@ -336,7 +335,10 @@ blockquote.centerpiece {
 
 // RESPONSIVENESS
 @media only screen and (max-width: 765px) {
-  main { padding: 2em 1em 3em; }
+  main {
+    padding: 1.5em 1em;
+    border-radius: 1em;
+  }
 
   .blog-posts li {
     flex-direction: column;
@@ -351,7 +353,11 @@ blockquote.centerpiece {
 }
 
 @media only screen and (max-width: 555px) {
-  body { font-size: 15px; }
+  body {
+    padding: 1em 0.5em;
+    font-size: 15px;
+  }
+
   .gallery {
     flex-direction: column;
     gap: 0.5em;

@@ -114,6 +114,11 @@ a {
 
   &:hover { text-decoration-thickness: 4px; }
   &:visited { text-decoration-color: var(--color-link-underline-visited); }
+
+  small &, .footnotes & {
+    text-decoration-thickness: 2px;
+    &:hover { text-decoration-thickness: 3px; }
+  }
 }
 
 ul, ol { padding-inline-start: 1.5em; }
@@ -244,10 +249,7 @@ ul.blog-posts {
 .tags a, .tag {
   padding: 0.3em 0.6em;
   border-radius: 1em;
-  text-decoration-thickness: 2px;
   background: var(--color-accent2);
-
-  &:hover { text-decoration-thickness: 3px; }
 }
 
 .footnotes {

@@ -58,7 +58,7 @@ export default {
   },
   build: {
     minify: true,
-    cssMinify: false,
+    cssMinify: true,
     rollupOptions: {
       input: {
         style: './style.scss',

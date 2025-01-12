@@ -357,7 +357,7 @@ blockquote.centerpiece {
     padding: 1em;
     margin: 0.5em 0;
 
-    .album-art { max-width: 200px; margin: 0; }
+    .album-art { width: 100%; max-width: 200px; margin: 0; }
     .album-info small { font-size: 1rem; }
     .music-info { flex: 1; }
   }
@@ -392,6 +392,13 @@ blockquote.centerpiece {
     flex-direction: column;
     gap: 0.5em;
     > * { flex: unset; }
+  }
+
+  .now .music-rec {
+    flex-direction: column;
+
+    .album-art { max-width: 250px; margin: 0 auto; }
+    .music-info h3 { text-align: center; }
   }
 }
 

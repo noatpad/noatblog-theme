@@ -212,7 +212,7 @@ input[type="submit"], button { cursor: pointer; }
   }
 }
 
-.blog-posts {
+ul.blog-posts {
   list-style: none;
   padding: unset;
 
@@ -327,7 +327,7 @@ blockquote.centerpiece {
 @media only screen and (max-width: 765px) {
   main { padding: 2em 1em 3em; }
 
-  .blog-posts li {
+  ul.blog-posts li {
     flex-direction: column;
     margin-bottom: 1em;
     span { flex: unset; }

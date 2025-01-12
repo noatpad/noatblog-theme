@@ -130,6 +130,7 @@ blockquote {
     margin: 0;
     + p { margin-top: 0.5rem; }
   }
+
   + * { margin-top: 1em; }
 }
 
@@ -159,11 +160,19 @@ code, .highlight { background: #111; }
 
 .highlight {
   padding: 1.5em;
-  border-radius: 1em;
+  border: 2px solid var(--color-accent2);
+  border-radius: 0.5em;
   margin-block-start: 1em;
   margin-block-end: 1em;
+  box-shadow: 0 2px 4px var(--color-accent3);
 
   pre { white-space: pre-line; }
+}
+
+code {
+  padding: 0.25em 0.4em;
+  border: 2px solid var(--color-accent3);
+  border-radius: 0.5em;
 }
 
 sup.footnote-ref a {
@@ -180,11 +189,6 @@ mark {
   padding: 0 0.125em;
   background: var(--color-accent2);
   color: inherit;
-}
-
-code {
-  padding: 0.25em;
-  border-radius: 0.5em;
 }
 
 figcaption {

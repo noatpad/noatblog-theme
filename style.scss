@@ -349,6 +349,20 @@ blockquote.centerpiece {
   }
 }
 
+// - Now
+.now {
+  .music-rec {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    margin: 0.5em 0;
+
+    .album-art { max-width: 200px; margin: 0; }
+    .album-info small { font-size: 1rem; }
+    .music-info { flex: 1; }
+  }
+}
+
 // RESPONSIVENESS
 @media only screen and (max-width: 765px) {
   main {

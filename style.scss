@@ -220,12 +220,13 @@ input[type="submit"], button { cursor: pointer; }
   }
 }
 
-.blog-posts {
+ul.blog-posts {
   list-style: none;
   padding: unset;
 
   li {
     display: flex;
+    margin-bottom: 0.35em;
     span { flex: 0 0 150px; }
   }
 }
@@ -234,12 +235,15 @@ input[type="submit"], button { cursor: pointer; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
+}
 
-  a {
-    padding: 0.3em 0.6em;
-    border-radius: 1em;
-    background: var(--color-accent2);
-  }
+.tags a, .tag {
+  padding: 0.3em 0.6em;
+  border-radius: 1em;
+  text-decoration-thickness: 2px;
+  background: var(--color-accent2);
+
+  &:hover { text-decoration-thickness: 3px; }
 }
 
 .footnotes {
@@ -308,6 +312,11 @@ blockquote.centerpiece {
 }
 
 // PAGES
+// - Post archive
+.blog {
+  h3 > .tag { margin-left: 0.3em; }
+}
+
 // - Guestbook
 .guestbook {
   main > p { text-align: center; }

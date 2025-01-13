@@ -357,7 +357,13 @@ blockquote.centerpiece {
     padding: 1em;
     margin: 0.5em 0;
 
-    .album-art { width: 100%; max-width: 200px; margin: 0; }
+    .album-art {
+      width: 100%;
+      max-width: 200px;
+      margin: 0;
+      box-shadow: 0 2px 8px var(--color-accent2);
+    }
+
     .album-info small { font-size: 1rem; }
     .music-info { flex: 1; }
   }

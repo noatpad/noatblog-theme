@@ -1,5 +1,6 @@
+import { defineConfig, PluginOption } from 'vite';
+import preact from '@preact/preset-vite';
 import { parse } from 'node-html-parser';
-import { UserConfig, type PluginOption } from 'vite';
 
 const injectBear = (): PluginOption => ({
   name: 'inject-bear',
@@ -9,7 +10,7 @@ const injectBear = (): PluginOption => ({
     // Hack in the actual blog URL into the local environment
     server.middlewares.use('/bear', async (req, res) => {
       // Get the blog page data from the given URL
-      const url = new URL(req.url!, 'https://noat.blog');
+      const url = new URL(req.url, 'https://noat.blog');
       const page = await fetch(url);
       const parsed = parse(await page.text());
 
@@ -26,7 +27,7 @@ const injectBear = (): PluginOption => ({
       parsed.querySelector('head')?.insertAdjacentHTML(
         'beforeend',
         '<script type="module" src="/@vite/client"></script>\n\
-        <link rel="stylesheet" href="/style.scss" />'
+        <link rel="stylesheet" href="/src/style.scss" />'
       );
 
       // Add a link back to the main local page to the navbar
@@ -38,7 +39,7 @@ const injectBear = (): PluginOption => ({
       // Inject the development script
       parsed.querySelector('footer')?.insertAdjacentHTML(
         'afterbegin',
-        '<script type="module" src="/noatblog.ts"></script>'
+        '<script type="module" src="/src/noatblog.ts"></script>'
       )
 
       const text = parsed.toString();
@@ -48,23 +49,24 @@ const injectBear = (): PluginOption => ({
   }
 });
 
-export default {
-  appType: "mpa",
-  plugins: [injectBear()],
-  css: {
-    preprocessorOptions: {
-      scss: { api: 'modern-compiler' }
-    }
-  },
-  build: {
-    minify: true,
-    cssMinify: true,
-    rollupOptions: {
-      input: {
-        style: './style.scss',
-        noatblog: './noatblog.ts'
-      }
-    }
-  },
-  server: { open: true }
-} satisfies UserConfig;
+// https://vitejs.dev/config/
+export default defineConfig({
+	plugins: [
+		preact(),
+		injectBear()
+	],
+	css: {
+		preprocessorOptions: {
+			scss: { api: 'modern-compiler' }
+		}
+	},
+	server: { open: true },
+	build: {
+		rollupOptions: {
+			input: {
+				theme: 'src/style.scss',
+				noatblog: 'src/noatblog.ts'
+			}
+		}
+	}
+});

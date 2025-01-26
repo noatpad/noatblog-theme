@@ -3,7 +3,7 @@ import { useEffect } from 'preact/hooks';
 import BearProxy from './BearProxy';
 
 const Home = () => {
-	useEffect(() => document.body.classList.add('post'), []);
+	useEffect(() => { document.body.className = 'post'; }, []);
 
 	return (
 		<Fragment>

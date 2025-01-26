@@ -1,0 +1,10 @@
+.music-rec-maker {
+  .col {
+    margin: 0.5em 0;
+    display: flex;
+    gap: 0.5em;
+
+    &.center { justify-content: center; }
+    & > .fill { flex: 1; }
+  }
+}

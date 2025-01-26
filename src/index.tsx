@@ -4,8 +4,8 @@ import { LocationProvider, Router, Route } from 'preact-iso';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Helpers from './pages/Helpers';
 import NotFound from './pages/_404';
-// import './style.scss';
 
 export const App = () => (
 	<LocationProvider>
@@ -13,6 +13,7 @@ export const App = () => (
 		<main>
 			<Router>
 				<Route path='/' component={Home} />
+				<Route path='/helpers' component={Helpers} />
 				<Route default component={NotFound} />
 			</Router>
 		</main>

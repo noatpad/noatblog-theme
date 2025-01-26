@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-    "start": "vite",
+		"start": "vite",
 		"build": "vite build",
 		"preview": "vite preview"
 	},
@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@preact/preset-vite": "^2.9.3",
+		"@preact/signals": "^2.0.1",
 		"@types/node": "^22.10.10",
 		"eslint": "^8.57.1",
 		"eslint-config-preact": "^1.5.0",

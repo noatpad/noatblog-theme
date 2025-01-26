@@ -1,5 +1,6 @@
 import { useRef } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
+import './style.scss';
 
 const BearProxy = () => {
   const formRef = useRef<HTMLFormElement>();

@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Helpers from './pages/Helpers';
+import Guestbook from './pages/Guestbook';
 import NotFound from './pages/_404';
 
 export const App = () => (
@@ -14,6 +15,7 @@ export const App = () => (
 			<Router>
 				<Route path='/' component={Home} />
 				<Route path='/helpers' component={Helpers} />
+				<Route path='/guestbook' component={Guestbook} />
 				<Route default component={NotFound} />
 			</Router>
 		</main>

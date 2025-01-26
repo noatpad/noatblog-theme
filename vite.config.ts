@@ -27,7 +27,7 @@ const injectBear = (): PluginOption => ({
       parsed.querySelector('head')?.insertAdjacentHTML(
         'beforeend',
         '<script type="module" src="/@vite/client"></script>\n\
-        <link rel="stylesheet" href="/src/style.scss" />'
+        <link rel="stylesheet" href="/src/theme.scss" />'
       );
 
       // Add a link back to the main local page to the navbar
@@ -49,7 +49,6 @@ const injectBear = (): PluginOption => ({
   }
 });
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
 		preact(),
@@ -64,7 +63,7 @@ export default defineConfig({
 	build: {
 		rollupOptions: {
 			input: {
-				theme: 'src/style.scss',
+				theme: 'src/theme.scss',
 				noatblog: 'src/noatblog.ts'
 			}
 		}

@@ -1,6 +1,6 @@
-@use './styles/iosevka';
-@use './styles/sky';
-@use './styles/fx';
+@use './theme/iosevka';
+@use './theme/sky';
+@use './theme/fx';
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/dracula/pygments/dracula.css');

@@ -358,10 +358,13 @@ blockquote.centerpiece {
     margin: 0.5em 0;
 
     .album-art {
-      width: 100%;
-      max-width: 200px;
-      margin: 0;
-      box-shadow: 0 2px 8px var(--color-accent2);
+      width: 220px;
+
+      img {
+        width: 100%;
+        margin: 0;
+        box-shadow: 0 2px 8px var(--color-accent2);
+      }
     }
 
     .album-info small { font-size: 1rem; }
@@ -403,7 +406,11 @@ blockquote.centerpiece {
   .now .music-rec {
     flex-direction: column;
 
-    .album-art { max-width: 250px; margin: 0 auto; }
+    .album-art {
+      width: 100%;
+      img { max-width: 300px; margin: 0 auto; }
+    }
+
     .music-info h3 { text-align: center; }
   }
 }

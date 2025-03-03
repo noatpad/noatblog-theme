@@ -103,7 +103,9 @@ const MusicRecMaker = () => {
       <hr />
       <div className="music-rec-preview">
         <div class="music-rec" ref={recRef}>
-          <img class="album-art" src={url} alt={`Album artwork`} />
+          <div className="album-art">
+            <img src={url} alt={`Album artwork`} />
+          </div>
           <div class="music-info">
             <h3 class="album-info">
               {album}

@@ -1,7 +1,6 @@
-@use './theme/iosevka';
+@use './theme/fonts';
 @use './theme/sky';
 @use './theme/fx';
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/dracula/pygments/dracula.css');
 
 // VARS
@@ -10,7 +9,7 @@
   --main-padding: 2em;
   --font-header: Grandstander, Lato, Raleway, sans-serif;
   --font-text: Gabarito, Nunito, Avenir Next, Avenir, Arial, system-ui, sans-serif;
-  --font-mono: Iosevka Curly, Iosevka, Consolas, monospace;
+  --font-mono: 'Maple Mono', Iosevka, Consolas, monospace;
   --color-body-bg-top: #18082c;
   --color-body-bg-bottom: #0d4344;
   --color-post-bg: #221822;
@@ -43,7 +42,7 @@ body {
   font-family: var(--font-text);
   font-size: 18px;
   font-optical-sizing: auto;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -173,7 +172,11 @@ hr {
   margin: 2em 0;
 }
 
-pre, code, .highlight { font-family: var(--font-mono); }
+pre, code, .highlight {
+  font-family: var(--font-mono);
+  font-size: 16px;
+}
+
 code, .highlight { background: #111; }
 
 .highlight {

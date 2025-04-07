@@ -7,6 +7,7 @@
 :root {
   --width: 850px;
   --main-padding: 2em;
+  --element-spacing: 0.8rem;
   --font-header: Grandstander, Lato, Raleway, sans-serif;
   --font-text: Gabarito, Nunito, Avenir Next, Avenir, Arial, system-ui, sans-serif;
   --font-mono: 'Maple Mono', Iosevka, Consolas, monospace;
@@ -29,7 +30,7 @@
 * { box-sizing: border-box; margin: 0; }
 img, picture, video, canvas, svg { display: block; }
 input, button, textarea, select { font: inherit; }
-p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote, math { overflow-wrap: break-word; margin-bottom: 1rem; }
+p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote, math { overflow-wrap: break-word; }
 
 // COMMON ELEMENTS
 body {
@@ -44,24 +45,6 @@ body {
   font-optical-sizing: auto;
   line-height: 1.5;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-header);
-  font-weight: 500;
-  font-style: oblique 2deg;
-  letter-spacing: -1px;
-  line-height: normal;
-
-  @supports (font-variation-settings: "wght" 550) { font-variation-settings: "wght" 550; }
-}
-
-h1 { font-size: 2.5em; }
-h2 { font-size: 1.7em; }
-h3 { font-size: 1.4em; }
-h4 { font-size: 1.2em; }
-h5 { font-size: 1.1em; }
-
-strong { font-weight: 800; }
 
 header {
   display: flex;
@@ -105,6 +88,8 @@ main {
   border: 4px outset var(--color-accent);
   border-radius: var(--main-padding);
   box-shadow: 4px 4px 20px var(--color-post-bg);
+
+  > * + * { margin-top: var(--element-spacing); }
 }
 
 footer {
@@ -113,6 +98,26 @@ footer {
 
   > span:not(#footer-directive) { display: none; }
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  font-weight: 500;
+  font-style: oblique 2deg;
+  letter-spacing: -1px;
+  line-height: normal;
+
+  @supports (font-variation-settings: "wght" 550) { font-variation-settings: "wght" 550; }
+
+  + * { margin-top: 0; }
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 1.7em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1.1em; }
+
+strong { font-weight: 800; }
 
 a {
   color: var(--color-link);
@@ -139,12 +144,7 @@ blockquote {
   background: linear-gradient(to right, var(--color-accent3), transparent 50%);
   color: var(--color-quote);
 
-  p {
-    margin: 0;
-    + p { margin-top: 0.5rem; }
-  }
-
-  + * { margin-top: 1em; }
+  p + p { margin-top: 0.5rem; }
 }
 
 table {
@@ -238,10 +238,13 @@ input[type="submit"], button { cursor: pointer; }
 
     & + p, & + h2 {
       text-align: center;
-      margin-top: -1rem;
+      margin-top: 0;
     }
   }
 }
+
+// Special case for the home page
+.home h1:first-of-type + h2 + p { margin-top: var(--element-spacing); }
 
 ul.blog-posts {
   list-style: none;
@@ -276,6 +279,7 @@ ul.blog-posts {
 button.upvote-button {
   padding: 0.25em;
   border: 2px solid var(--color-accent2);
+  margin-top: var(--element-spacing);
   border-radius: 6px;
   background: transparent;
   color: var(--color-quote);
@@ -349,7 +353,11 @@ blockquote.centerpiece {
   #guestbooks___guestbook-form-container { margin: 2em 0; }
   #guestbooks___guestbook-form > * + * { margin-top: 1em; }
   #guestbooks___guestbook-messages-header { text-align: center; }
-  #guestbooks___guestbook-messages-container { margin-bottom: 2em; }
+  #guestbooks___guestbook-messages-container {
+    margin-bottom: 2em;
+    > div + div { margin-top: var(--element-spacing); }
+    > div > p + blockquote { margin-top: 0.5rem; }
+  }
 
   .guestbooks___user-info {
     display: flex;

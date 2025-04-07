@@ -114,11 +114,6 @@ footer {
   > span:not(#footer-directive) { display: none; }
 }
 
-time {
-  font-family: var(--font-mono);
-  font-style: normal;
-}
-
 a {
   color: var(--color-link);
   text-decoration-thickness: 3px;
@@ -173,11 +168,13 @@ hr {
   margin: 2em 0;
 }
 
-pre, code, .highlight {
+pre, code, time, .highlight {
   font-family: var(--font-mono);
   font-size: 16px;
+  font-feature-settings: "zero";
 }
 
+time { font-style: normal; }
 code, .highlight { background: #111; }
 
 .highlight {

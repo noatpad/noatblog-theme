@@ -170,7 +170,7 @@ hr {
 
 pre, code, time, .highlight {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 1em;
   font-feature-settings: "zero";
 }
 
@@ -418,6 +418,12 @@ blockquote.centerpiece {
     padding: 1em 0.5em;
     font-size: 15px;
   }
+
+  header .title h1 { font-size: 3.5em; }
+
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.5em; }
+  h3 { font-size: 1.3em; }
 
   .gallery {
     flex-direction: column;

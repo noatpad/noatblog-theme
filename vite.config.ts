@@ -64,7 +64,8 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				theme: 'src/theme.scss',
-				noatblog: 'src/noatblog.ts'
+				noatblog: 'src/noatblog.ts',
+        dashboard: 'src/dashboard.scss'
 			}
 		}
 	}

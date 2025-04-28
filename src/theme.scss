@@ -186,7 +186,10 @@ code, .highlight { background: #111; }
   margin-block-end: 1em;
   box-shadow: 0 2px 4px var(--color-accent3);
 
-  pre { white-space: pre-line; }
+  pre {
+    white-space: pre-wrap;
+    tab-size: 4;
+  }
 }
 
 code {

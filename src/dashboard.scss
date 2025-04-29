@@ -61,11 +61,12 @@ a {
   text-decoration-thickness: 2px;
   text-decoration-color: var(--color-link-underline);
   text-underline-offset: 3px;
+
+  &:hover { text-decoration-thickness: 3px; }
+  &:visited { text-decoration-color: var(--color-link-underline-visited); }
+  &.title { text-decoration: none; }
 }
 
-a:hover { text-decoration-thickness: 3px; }
-a:visited { text-decoration-color: var(--color-link-underline-visited); }
-a.title { text-decoration: none; }
 
 ul, textarea {
   scrollbar-color: var(--color-accent) transparent;
@@ -83,8 +84,9 @@ button {
   border: 2px solid var(--color-accent);
   font-size: 1em;
   transition: border-color 0.2s ease;
+
+  &:hover { border-color: var(--color-accent-active); }
 }
-button:hover { border-color: var(--color-accent-active); }
 
 textarea { resize: vertical; }
 

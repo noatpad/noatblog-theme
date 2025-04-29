@@ -87,15 +87,21 @@ button {
 button:hover { border-color: var(--color-accent-active); }
 
 textarea { resize: vertical; }
-textarea#body_content {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
+
+#header_content, #body_content {
+  border-color: var(--color-accent) !important;
 }
 
 #header_content {
   font-family: var(--font-mono);
+  font-size: 1em;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+#body_content {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .sticky-controls, .helptext.sticky {

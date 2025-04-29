@@ -164,6 +164,7 @@ const Home = () => {
 			</pre>
 			</div>
 			<p><em>For language specific syntax highlighting, specify the language at the beginning of the code block.</em></p>
+			<p><code>Lorem ipsum dolor</code>, sit amet consectetur adipisicing. <code>Code here, code there.</code> Lorem ipsum dolor sit amet, consectetur adipisicing elit. <code>Code code</code></p>
 			<h2 id="latex">LaTeX</h2><math display="block">
 				<mrow>
 					<mi>u</mi>

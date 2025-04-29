@@ -37,7 +37,7 @@ body {
   max-width: var(--width);
   padding: 1em;
   margin: 0 auto;
-  background: linear-gradient(to bottom, var(--color-body-bg-top) 15%, var(--color-body-bg-bottom));
+  background: var(--color-body-bg-top);
   background-attachment: fixed;
   color: var(--color-fg);
   font-family: var(--font-text);

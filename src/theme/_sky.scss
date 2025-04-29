@@ -4,6 +4,7 @@
   left: 0;
   height: max(100vw, 100vh);
   width: max(100vw, 100vh);
+  background: linear-gradient(to bottom, var(--color-body-bg-top) 15%, var(--color-body-bg-bottom));
   pointer-events: none;
   z-index: -1;
   overflow: hidden;

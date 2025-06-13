@@ -4,6 +4,9 @@
   display: inline-block;
   white-space: pre-wrap;
 
+  // Hacky workaround for Safari browsers, for italic text that gets clipped
+  text-shadow: 0 0 1em transparent;
+
   &.bouncy {
     animation: bounce 1s linear infinite;
 

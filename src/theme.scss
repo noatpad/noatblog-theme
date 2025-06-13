@@ -61,10 +61,11 @@ header {
       font-size: 4em;
       font-weight: 800;
       text-align: center;
-      text-shadow: 2px 2px 6px var(--color-accent), -2px -2px 8px var(--color-accent2);
       letter-spacing: -2px;
 
       @supports (font-variation-settings: "wght" 800) { font-variation-settings: "wght" 800; }
+
+      .fx { text-shadow: 2px 2px 6px var(--color-accent), -2px -2px 8px var(--color-accent2); }
     }
   }
 }

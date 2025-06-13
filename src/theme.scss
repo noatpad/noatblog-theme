@@ -111,6 +111,7 @@ h1, h2, h3, h4, h5, h6 {
   @supports (font-variation-settings: "wght" 550) { font-variation-settings: "wght" 550; }
 
   + * { margin-top: 0; }
+  &:has(+ &) { margin-bottom: 0.2rem; }
 }
 
 h1 { font-size: 2.5em; }

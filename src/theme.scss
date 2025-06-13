@@ -198,9 +198,13 @@ code {
   border-radius: 0.5em;
 }
 
-sup.footnote-ref a {
-  color: var(--color-link-underline);
-  text-decoration: none;
+sup {
+  line-height: 0;
+
+  &.footnote-ref a {
+    color: var(--color-link-underline);
+    text-decoration: none;
+  }
 }
 
 small {
